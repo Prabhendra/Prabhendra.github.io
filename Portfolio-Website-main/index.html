@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Bhujbal | AI Engineer & Data Analyst Portfolio</title>
+    
+    <meta name="description" content="The futuristic portfolio of Akshay Bhujbal, an AI Engineer and Data Analyst specializing in Generative AI, Python, and BI Dashboards.">
+    <meta name="keywords" content="Akshay Bhujbal, Portfolio, AI Engineer, Data Analyst, Python, SQL, Generative AI, Cyberpunk">
+    <meta name="author" content="Akshay Bhujbal">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📟</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --primary: #00d2ff; /* Cyan */
+            --accent: #00ffaa; /* Green */
+            --text-light: #f0f8ff; /* AliceBlue */
+            --text-dim: #9ca3af; /* Gray-400 */
+            --border-color: rgba(0, 210, 255, 0.2);
+            --card-bg: rgba(10, 10, 10, 0.5);
+        }
+        
+        /* Base Styles */
+        body { background-color: var(--bg); color: var(--text-dim); font-family: 'Fira Code', monospace; cursor: none; }
+        h1, h2, h3, h4, .font-display { font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* Animated Grid Background */
+        .animated-grid-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
+            background-image: linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(to right, var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: pan-grid 60s linear infinite;
+        }
+        @keyframes pan-grid { from { background-position: 0 0; } to { background-position: -800px -800px; } }
+
+        /* Glassmorphic Cards & Glow Effects */
+        .glass-card { background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .glow-on-hover:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 40px var(--primary);
+        }
+        
+        /* Buttons */
+        .btn { padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 700; transition: all 0.3s ease; font-family: 'Rajdhani'; letter-spacing: 0.1em; }
+        .btn-primary { background-image: linear-gradient(90deg, var(--primary), var(--accent)); color: var(--bg); }
+        .btn-primary:hover { box-shadow: 0 0 20px var(--accent); transform: scale(1.05); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--bg); box-shadow: 0 0 20px var(--primary); }
+        
+        /* Custom Cursor */
+        .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+        .cursor-dot { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+        .cursor-ring { width: 30px; height: 30px; border: 2px solid var(--primary); border-radius: 50%; transition: all 0.15s ease-out; }
+        
+        /* Form Inputs */
+        .contact-input { background-color: #0c0c0c; border: 1px solid var(--border-color); color: var(--text-light); transition: all 0.3s ease; }
+        .contact-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px var(--accent); }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="animated-grid-bg"></div>
+
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center bg-bg/50 backdrop-blur-md">
+            <a href="#home" class="text-2xl font-display font-bold hover:text-primary transition-colors">Akshay Bhujbal</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm">
+                <a href="#about" class="hover:text-primary">/about</a>
+                <a href="#skills" class="hover:text-primary">/skills</a>
+                <a href="#experience" class="hover:text-primary">/experience</a>
+                <a href="#education" class="hover:text-primary">/education</a>
+                <a href="#projects" class="hover:text-primary">/projects</a>
+                <a href="#contact" class="hover:text-primary">/contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <section id="home" class="min-h-screen flex items-center">
+            <div class="max-w-4xl space-y-4">
+                <p class="text-lg text-accent font-medium reveal-element">[SYSTEM]:// Engaged</p>
+                <h1 class="text-5xl sm:text-7xl font-bold tracking-tighter text-light reveal-element" style="--delay: 0.1s;">Akshay Bhujbal</h1>
+                <h2 class="text-4xl sm:text-6xl font-bold text-dim tracking-tight reveal-element" style="--delay: 0.2s;"> Data Analyst | Aspiring AI & Generative AI Engineer</h2>
+</h2>
+<p class="mt-4 text-lg text-light reveal-element" style="--delay: 0.3s;">
+    Building AI/ML projects with <span class="text-accent">Python, LangChain, Gemini API, and RAG systems</span> to deliver next-generation intelligent solutions.
+</p>
+<div class="pt-6 reveal-element" style="--delay: 0.4s;">
+                    <a href="#projects" class="btn btn-primary">Initialize Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24">
+            <h2 class="text-4xl font-display text-center mb-12">/ About Me</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                <div class="lg:col-span-2 flex justify-center">
+                    <div class="w-72 h-72 relative">
+                        <svg id="ai-avatar" class="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--primary); stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:var(--accent); stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#glow-grad)" stroke-width="2" filter="url(#glow)"/>
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="4 4" class="rotate"/>
+                            <circle cx="100" cy="100" r="50" fill="rgba(0, 210, 255, 0.1)" class="pulse"/>
+                        </svg>
+                        <img src="pro.png" alt="Akshay Bhujbal" class="relative w-full h-full object-cover rounded-full p-2">
+                        <style>#ai-avatar .rotate{animation:spin 20s linear infinite;} #ai-avatar .pulse{animation:pulse-light 4s ease-in-out infinite;} @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}} @keyframes pulse-light{0%,100%{opacity:0.1;}50%{opacity:0.4;}}</style>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 space-y-4">
+    <p>// Building <span class="text-accent">cutting-edge AI applications</span> leveraging <span class="text-accent">Generative AI, Gemini API, LangChain, & AI Agents</span>.</p>
+    <p>// Designing <span class="text-primary">intelligent workflows, RAG systems, and ML pipelines</span> for data-driven solutions.</p>
+    <p>// Skilled in <span class="text-primary">Python, SQL, Scikit-learn, TensorFlow, & Streamlit</span> for rapid prototyping and deployment.</p>
+    <p>// Collaborating with global clients including <span class="text-light">Infosys (India)</span> and <span class="text-light">NGOs (Ireland)</span> to deliver impactful AI projects.</p>
+</div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="py-24">
+            <h2 class="text-4xl font-display text-center mb-12">/ Technical Matrix</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                </div>
+        </section>
+
+        <section id="experience" class="py-24">
+            <h2 class="text-4xl font-display text-center mb-16">/ Career Vector</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                </div>
+        </section>
+        
+        <section id="projects" class="py-24">
+            <h2 class="text-4xl font-display text-center mb-12">/ Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+     <div class="max-w-3xl mx-auto mt-16">
+    <div class="glass-card p-6 glow-on-hover text-center">
+        <h3 class="font-display text-xl font-bold text-light">Want More Projects?</h3>
+        <p class="mt-2 text-dim">Explore additional experiments, open-source apps, and AI tools on my GitHub.</p>
+        <a href="https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Learning-Projects" target="_blank" class="btn btn-outline mt-4 inline-block">
+            🔗 View All Projects on GitHub
+        </a>
+    </div>
+</div>
+
+
+   
+</section>
+<section id="education" class="py-24">
+    <h2 class="text-4xl font-display text-center mb-16">/ Academic Matrix</h2>
+    <div class="max-w-3xl mx-auto space-y-8">
+        <div class="glass-card p-6 glow-on-hover">
+            <h3 class="text-xl font-bold font-display">Postgraduate Diploma in <span class="text-primary">Data Analytics</span></h3>
+            <p class="text-accent text-sm">National College of Ireland · 2020</p>
+            <p class="mt-2 text-dim">Specialized in Python, SQL, Data Visualization, and Machine Learning with hands-on BI tools.</p>
+        </div>
+        <div class="glass-card p-6 glow-on-hover">
+            <h3 class="text-xl font-bold font-display">Bachelor of Science in <span class="text-primary">Computer Science</span></h3>
+            <p class="text-accent text-sm">Savitribai Phule Pune University · 2016</p>
+            <p class="mt-2 text-dim">Core foundation in software development, data structures, and computer systems.</p>
+        </div>
+    </div>
+</section>
+
+<div class="text-center py-12">
+    <a href="https://drive.google.com/file/d/1Y0MS6B23S8pLsOj-ec7L8bnRqGtHFF_N/view?usp=drive_link" download class="btn btn-primary text-xl">
+        <i class="fas fa-download mr-2"></i> Download Resume
+    </a>
+</div>
+<section id="contact" class="py-24">
+            <h2 class="text-4xl font-display text-center mb-12">/ Establish Connection</h2>
+            <div class="max-w-2xl mx-auto glass-card p-8 glow-on-hover">
+                <form action="https://formsubmit.co/akshaybhujbal.ai@gmail.com" method="POST" class="space-y-6">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://akshaybhujbal1995.github.io/Portfolio-Website/thankyou.html">
+<input type="hidden" name="_next" value="https://akshaybhujbal1995.github.io/Portfolio-Website/thankyou.html">
+
+                    <input type="text" name="name" placeholder="[ Your Name ]" class="contact-input p-3 w-full" required>
+                    <input type="email" name="email" placeholder="[ Your Email ]" class="contact-input p-3 w-full" required>
+                    <input type="text" name="subject" placeholder="[ Subject Line ]" class="contact-input p-3 w-full" required>
+                    <textarea name="message" rows="5" placeholder="[ Transmission... ]" class="contact-input p-3 w-full" required></textarea>
+                    <button type="submit" class="btn btn-primary w-full py-3">Send Signal</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    
+    <footer class="border-t border-primary/20 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-dim">
+            <a href="#home" class="text-2xl font-display font-bold text-gradient mb-4 inline-block">Akshay Bhujbal</a>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://github.com/AkshayBhujbal1995" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-transform hover:scale-125"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/akshay-1995-bhujbal" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-transform hover:scale-125"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mt-4 text-xs">© 2024 Akshay Bhujbal // Systems Online</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA ---
+            const skillsData = [
+    // 🧠 Core AI
+    { icon: '🧠', name: 'Generative AI', desc: 'LLMs, Agents & Prompt Engineering' },
+    { icon: '🤖', name: 'LangChain', desc: 'AI Orchestration Framework' },
+    { icon: '⚡', name: 'Gemini API', desc: 'Multimodal AI Apps' },
+    { icon: '🛰️', name: 'RAG Systems', desc: 'Retrieval-Augmented Generation' },
+    { icon: '📡', name: 'AI Agents', desc: 'Autonomous AI Workflows' },
+
+    // 🧮 Machine Learning
+    { icon: '🔮', name: 'Scikit-learn', desc: 'ML Algorithms & Pipelines' },
+    { icon: '🧬', name: 'TensorFlow', desc: 'Deep Learning Models' },
+    { icon: '🧠', name: 'LSTM', desc: 'Sequential Predictions' },
+
+    // 💻 Supporting Tools
+    { icon: '🐍', name: 'Python', desc: 'Core AI Development' },
+    { icon: '🛢️', name: 'SQL', desc: 'Data Handling & Queries' },
+    { icon: '🧪', name: 'Streamlit', desc: 'AI Web App Deployment' },
+
+    // 📊 Visualization / Reporting (Optional — bottom of grid)
+    { icon: '📊', name: 'Power BI', desc: 'Interactive Dashboards' },
+    { icon: '📈', name: 'Tableau', desc: 'Data Visualization' },
+
+
+
+    // ➕ New Added Skills
+    { icon: '💬', name: 'Prompt Engineering', desc: 'Design & Optimize Prompts' },
+    { icon: '🖥️', name: 'MCP Client/Server', desc: 'Networking & Communication' },
+    { icon: '🗂️', name: 'Git', desc: 'Version Control & Collaboration (GitHub/GitLab)' },
+];
+
+
+        const experienceData = [
+    {
+        role: 'Data Analyst → AI Engineer',
+        company: 'Infosys (Client Project)',
+        date: 'Apr 2022 – Present',
+        desc: ['Progressed from Data Analyst Intern to full-time AI Engineer, working on Infosys client AI initiatives. Developed AI agent for logistics reporting integrating LLMs, RAG, and dashboards achieving 70% faster reporting.']
+    },
+    {
+        role: 'Research Assistant',
+        company: 'Northside Partnership (Ireland)',
+        date: 'Oct 2020 – Nov 2021',
+        desc: ['Analyzed datasets, created dashboards, and reported program KPIs for social initiatives.']
+    },
+    {
+        role: 'Volunteer Data Analyst',
+        company: 'Ostomy Association of Ireland',
+        date: 'Apr 2019 – Sep 2020',
+        desc: ['Performed patient data analysis and assisted in healthcare seminar reporting.']
+    }
+];
+
+
+
+
+
+
+            const projectsData = [
+    // 🤖 AI & Generative AI
+    {
+        img: 'I1.png',
+        title: 'AI-Driven HR Onboarding Agent',
+        desc: 'Agentic AI system automating HR workflows using MCP server–client architecture and Claude Desktop.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/AI-Driven-HR-Onboarding-Agent'
+    },
+    {
+        img: 'I2.png',
+        title: 'AI Business Research Copilot (RAG System)',
+        desc: 'RAG-powered local LLM copilot that scrapes, processes, and answers queries with contextual accuracy.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/AI-Business-Research-Copilot'
+    },
+    {
+        img: 'I3.png',
+        title: 'Fruit Freshness Classification',
+        desc: 'CNN-based deep learning project for fruit quality inspection using image recognition.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/Fruit-Freshness-Classification'
+    },
+    {
+        img: 'I4.png',
+        title: 'Retail Sales Forecasting',
+        desc: 'Hybrid ML + LSTM model predicting weekly retail sales with interactive charts.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/Retail-Sales-Forecasting'
+    },
+    {
+        img: 'I5.png',
+        title: 'Customer Churn Prediction',
+        desc: 'Predictive analytics model forecasting customer attrition with interactive visualization.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/Customer-Churn-Prediction'
+    },
+    {
+        img: 'I6.png',
+        title: 'Credit Card Fraud Detection',
+        desc: 'ML model and Streamlit app detecting fraudulent transactions using Random Forest.',
+        code: 'https://github.com/AkshayBhujbal1995/AI-Portfolio/tree/main/Showcase-Projects/Credit-Card-Fraud-Detection'
+    },
+    {
+        img: 'I7.png',
+        title: 'Express Wash - Smart Laundry App',
+        desc: 'Real-time multi-interface laundry management system with AI-assisted tracking and billing.',
+        code: 'https://github.com/AkshayBhujbal1995/ExpressWash-Desktop-Version-Online-System'
+    }
+];
+
+
+//--------------------------------------
+
+
+
+
+
+
+
+
+
+            // --- RENDER DYNAMIC CONTENT ---
+            const skillsContainer = document.querySelector('#skills .grid');
+            skillsData.forEach(skill => {
+                skillsContainer.innerHTML += `<div class="glass-card p-6 text-center glow-on-hover"><div class="text-4xl mb-3">${skill.icon}</div><h3 class="font-display text-lg">${skill.name}</h3><p class="text-sm text-dim">${skill.desc}</p></div>`;
+            });
+            const experienceContainer = document.querySelector('#experience .space-y-8');
+            experienceData.forEach(job => {
+                experienceContainer.innerHTML += `<div class="glass-card p-6 glow-on-hover"><h3 class="text-xl font-bold font-display">${job.role} at <span class="text-primary">${job.company}</span></h3><p class="text-accent text-sm">${job.date}</p><p class="mt-2 text-dim">${job.desc}</p></div>`;
+            });
+            const projectsContainer = document.querySelector('#projects .grid');
+            projectsData.forEach(proj => {
+                projectsContainer.innerHTML += `
+                    <div class="glass-card flex flex-col glow-on-hover">
+                        <div class="h-48 bg-slate-900/50 flex items-center justify-center text-slate-500 font-display text-lg"><img src="${proj.img}" alt="${proj.title}" class="w-full h-full object-cover"></div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-display text-xl font-bold">${proj.title}</h3>
+                            <p class="mt-2 text-sm flex-grow">${proj.desc}</p>
+                            <a href="${proj.code}" target="_blank" rel="noopener noreferrer" class="btn btn-outline text-xs w-full mt-4">View Code on GitHub</a>
+                        </div>
+                    </div>`;
+            });
+            
+            // --- GSAP ANIMATIONS ---
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Custom Cursor
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorRing = document.querySelector('.cursor-ring');
+            gsap.set([cursorDot, cursorRing], { xPercent: -50, yPercent: -50 });
+            window.addEventListener('mousemove', e => {
+                gsap.to(cursorDot, { duration: 0.2, x: e.clientX, y: e.clientY });
+                gsap.to(cursorRing, { duration: 0.5, x: e.clientX, y: e.clientY });
+            });
+
+            // General reveal animation for sections
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.from(section, {
+                    scrollTrigger: { trigger: section, start: 'top 85%', toggleActions: 'play none none none' },
+                    opacity: 0, y: 50, duration: 1, ease: 'power3.out'
+                });
+            });
+
+            // Hero entrance animation
+            gsap.utils.toArray('.reveal-element').forEach(el => {
+                gsap.from(el, {
+                    opacity: 0, y: 30, duration: 0.8, ease: 'power3.out',
+                    delay: parseFloat(el.style.getPropertyValue("--delay")) || 0
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
